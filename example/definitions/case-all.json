@@ -1,0 +1,32 @@
+{
+    "name": "case-list",
+    "path": "case",
+    "method": "GET",
+    "mock": {
+        "body": [{
+            "caseid": 1,
+            "patientid": 2,
+            "doctorid": 3,
+            "created": "2015-01-01T10:40:41.235Z",
+            "lastmodified": "2015-01-01T10:40:41.235Z",
+            "diagnosis": "some diagnosis",
+            "comments": [{
+                "commenter": 4,
+                "date": "2015-01-01T10:40:41.235Z",
+                "text": "comment text"
+         }]
+        }, {
+            "caseid": 5,
+            "patientid": 6,
+            "doctorid": 7,
+            "created": "2015-02-01T10:40:41.235Z",
+            "lastmodified": "2015-02-01T10:40:41.235Z",
+            "diagnosis": "some diagnosis2",
+            "comments": [{
+                "commenter": 8,
+                "date": "2015-02-01T10:40:41.235Z",
+                "text": "comment text2"
+         }]
+        }]
+    }
+}

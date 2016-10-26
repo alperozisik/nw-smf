@@ -1,0 +1,20 @@
+{
+    "name": "case-detail",
+    "path": "case/{0}",
+    "method": "GET",
+    "mock": {
+        "body": {
+            "caseid": 1,
+            "patientid": 2,
+            "doctorid": 3,
+            "created": "2015-01-01T10:40:41.235Z",
+            "lastmodified": "2015-01-01T10:40:41.235Z",
+            "diagnosis": "some diagnosis",
+            "comments": [{
+                "commenter": 4,
+                "date": "2015-01-01T10:40:41.235Z",
+                "text": "comment text"
+         }]
+        }
+    }
+}

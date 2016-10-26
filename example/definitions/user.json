@@ -1,0 +1,14 @@
+{
+    "name": "user",
+    "method": "GET",
+    "path": "user",
+    "mock": {
+        "body": {
+            "id": 1,
+            "user": "user",
+            "location": "mock",
+            "email": "user@example.com",
+            "name": "Mock User"
+        }
+    }
+}

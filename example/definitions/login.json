@@ -1,0 +1,10 @@
+{
+    "name": "login",
+    "method": "POST",
+    "path": "login",
+    "mock": {
+        "body": {
+            "bearer": "smartfaceToken"
+        }
+    }
+}
