@@ -10,8 +10,8 @@ var nw = module.exports = {
     proxy: "",
     ignoreSSLErrors: false,
     requestSuccessValidator: requestSuccessValidator,
-    onActivityStart: null,
-    onActivityEnd: null
+    onActivityStart: function() {},
+    onActivityEnd: function() {}
 };
 
 
