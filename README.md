@@ -47,32 +47,32 @@ In order to make a call, first you need to register a service definition.
 nw.registerService(serviceDefinitionObject);
 ```
 
-## Sevice Definition
+## Service Definition
 Service Definition Object is a simple object. Members of the object are defined below:
 - **name**: String, required. Name of the service. This is the unique accessor to the service.
 - **method**: String, required. HTTP method of the service. Better to be all in capital letters.
-- **path**: String, required; not required if url is used. Path is concatinated to end of the **nw.baseURL**. Supports string format. Do not define query string values here, so do not use question mark (?)
+- **path**: String, required; not required if url is used. Path is concatenated to end of the **nw.baseURL**. Supports string format. Do not define query string values here, so do not use question mark (?)
 - **url**: String, required; not required if path is used. Full URL of the string, is not related with _nw.baseURL_. Supports string format.
 - **mock**: Object, optional. Mock value of the service. Can have _body_, _header_, _status_.
-- **header**: Object, optional. Key-value pair object. Static header paramemeters of the request.
-- **query**: Object, optional. Key-value pair object. Static query string paramemeters of the request.
+- **header**: Object, optional. Key-value pair object. Static header parameters of the request.
+- **query**: Object, optional. Key-value pair object. Static query string parameters of the request.
 - **body**: Object or String, optional. Static body value of the request.
 
 ### String format
-String format basicaly is a pattern in the fiven string and replacing those parameters within the string with given arguments.
-More details can be reaced from: https://www.npmjs.com/package/form-urlencoded
+String format basically is a pattern in the given string and replacing those parameters within the string with given arguments.
+More details can be reached from: https://www.npmjs.com/package/form-urlencoded
 
 ### Practical way to add services
-Place them in a seperate JSON files (with **json** extension) and require them.
+Place them in a separate JSON files (with **json** extension) and require them.
 Pass the require result into `nw.registerService(require("myServiceDefinitionFile.json"));`
 
 # API
 ## nw settings
 _nw_ settings object provides following API
 ### baseURL
-String. Works kind a prefix to path. It does not add slashes (/) automatically while concatinating with path to form the URL of the service.
+String. Works kind a prefix to path. It does not add slashes (/) automatically while concatenating with path to form the URL of the service.
 ### services
-Object. All service definitions are placed  here. All services are registered with their names and can be accessed through by its name as property. A service definition with same name overwrites the definition.
+Object. All service definitions are placed here. All services are registered with their names and can be accessed through by its name as property. A service definition with same name overwrites the definition.
 ### factory
 Function. Creates **nw service object** from service definition. Service is given as parameter by name of the registered services. Does not expect a service definition as object.
 ### commonHeaders
@@ -84,21 +84,21 @@ String. Smartface only! All requests are gone through a socks proxy in provided 
 ### ignoreSSLErrors
 Boolean. Smartface only! Ignores SSL errors on services
 ### requestSuccessValidator
-Function. A pre-processor for defining reponse of the service falls into cagegory of fauly or success based on the _http status_ of the response. Takes status (number) as argument parameter, returns true|false boolean as result. False mean faulty response. By default this is set all status between 200 & 399 are valid, rest not. Can be replaced with assigning this function with another.
+Function. A pre-processor for defining response  of the service falls into category of faulty or success based on the _http status_ of the response. Takes status (number) as argument parameter, returns true|false boolean as result. False mean faulty response. By default this is set all status between 200 & 399 are valid, rest not. Can be replaced with assigning this function with another.
 ### onActivityStart
 Function|Event. Fired before network operation starts. Useful to block UI during network operation. Can be set by assigning the function. Does not takes any argument or returns.
 ### onActivityEnd
 Function|Event. Fired after network operation starts. Useful to remove UI block after network operation completes. Can be set by assigning the function. Does not takes any argument or returns.
 ## nw service object
-_nw service object_ is the real object that handles all network operations. As a pattern every function retuns it self (chaining), except **chain** method.
-Header value **content-type** is important before making a request if request has a body. Every request is prepared by its _content-type_. Every response is also parsed by its reponse header **content-type** value and provided as object; if parsing fails then the reponse body is provided as string.
+_nw service object_ is the real object that handles all network operations. As a pattern every function returns itself (chaining), except **chain** method.
+Header value **content-type** is important before making a request if request has a body. Every request is prepared by its _content-type_. Every response is also parsed by its response  header **content-type** value and provided as object; if parsing fails then the response  body is provided as string.
 
 ### body
 Function. Sets values in body of the request. In form it can be given as key-value pair,  first argument is key, second argument is value; in other scenarios it can be given as single parameter.
 ### header
-Function. Sets the header values for the request in ket-value format. First argument is key, second argument is value.
+Function. Sets the header values for the request in key-value format. First argument is key, second argument is value.
 ### query
-Function. Sets the query string values for the request in ket-value format. First argument is key, second argument is value.
+Function. Sets the query string values for the request in key-value format. First argument is key, second argument is value.
 ### path
 Function. Formats the string in path. Each argument is provided as argument to formatter.
 ### result
@@ -111,7 +111,7 @@ Objects have following properties:
 - **next**: Boolean.In _chained flow_ if this is set to false within the function, chain will not continue.
 
 ### chain
-Creates a another _nw service object_ by the given _service definition name_ (string) in a _chained flow_. In this case it does not returns the _original nw service object_ instead it returns **new nw service object**
+Creates an another _nw service object_ by the given _service definition name_ (string) in a _chained flow_. In this case it does not returns the _original nw service object_ instead it returns **new nw service object**
 ### run
 Function. Runs the services according to the _flow_. Making an actual call and retrieving values from server.
 ### mock
@@ -122,13 +122,13 @@ Function. Does not run the service! Instead executes them in _flow_ after 300ms 
 ## Normal Flow
 1. **nw.onActivityStart** event is fired
 2. Service is executed
-3.  _&lt;nw service object&gt;.result_ is handeled
+3.  _&lt;nw service object&gt;.result_ is handled
 4. **nw.onActivityEnd** event is fired 
 
 ## Chained Flow
 1. **nw.onActivityStart** event is fired
 2. First _nw service object_ is executed
-3. First _&lt;nw service object&gt;.result_ is handeled
+3. First _&lt;nw service object&gt;.result_ is handled
 4. If there are no more _nw service object_ (s) in chain, go to step **9**
 5. If the **next** value is true (which is by default) continue. If not go to step **9**
 6. Execute next _nw service object_ in chain
