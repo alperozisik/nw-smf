@@ -1,6 +1,6 @@
 {
   "name": "nw-smf",
-  "version": "1.0.1",
+  "version": "1.0.1,
   "description": "NW libray for Smartface",
   "main": "nw.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alperozisik/nw-smf.git"
+    "url": "git+https://github.com/smartface/js-lib-nw.git"
   },
   "keywords": [
     "nw",
@@ -17,7 +17,7 @@
   "author": "Alper Ozisik",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alperozisik/nw-smf/issues"
+    "url": "https://github.com/smartface/js-lib-nw/issues"
   },
   "homepage": "https://github.com/alperozisik/nw-smf#readme",
   "dependencies": {
