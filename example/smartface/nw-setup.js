@@ -11,7 +11,7 @@
 
     nw.commonHeaders["Accept"] = nw.commonHeaders["Content-Type"] = "application/json";
     
-    const Dialog = require("smf-rbox-helper");
+    const Dialog = require("smf-dialog");
     nw.onActivityStart = function() {
         Dialog.showWait();
     };
