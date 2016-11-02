@@ -24,7 +24,7 @@ If you are within a Smartface workspace first switch to scripts folder. Here is 
 # Examples
 Examples are not included within the npm package.
 It is possible to reach examples from github page:
-https://github.com/alperozisik/nw-smf
+https://github.com/smartface/js-lib-nw/
 
 # Usage
 **nw** relies on **XMLHttpRequest** object to be global.

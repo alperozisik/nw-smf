@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/smartface/js-lib-nw/issues"
   },
-  "homepage": "https://github.com/alperozisik/nw-smf#readme",
+  "homepage": "https://github.com/smartface/js-lib-nw/#readme",
   "dependencies": {
     "form-urlencoded": "^1.5.0",
     "string-format": "^0.5.0",
