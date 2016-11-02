@@ -1,3 +1,4 @@
 node_modules
 example/node/node_modules
+example/smartface/node_modules
 npm-debug.log
