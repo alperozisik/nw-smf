@@ -13,12 +13,12 @@ First it is developed for [Smartface](https://www.smartface.io) then it is adopt
 
 # Install
 ```shell
-npm i nw-smf
+npm i smf-nw
 ```
 ## Smartface
 If you are within a Smartface workspace first switch to scripts folder. Here is a script that does it all:
 ```shell
-(cd ~/workspace/scripts && npm i nw-smf)
+(cd ~/workspace/scripts && npm i smf-nw)
 ```
 
 # Examples

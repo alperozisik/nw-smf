@@ -1,7 +1,7 @@
 {
-  "name": "nw-smf-node-example",
+  "name": "smf-nw-node-example",
   "version": "1.0.0",
-  "description": "Node Example for nw-smf lib",
+  "description": "Node Example for smf-nw lib",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
