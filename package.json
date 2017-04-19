@@ -1,6 +1,6 @@
 {
   "name": "smf-nw",
-  "version": "'3.0.0",
+  "version": "3.0.0",
   "description": "NW libray for Smartface",
   "main": "nw.js",
   "scripts": {
